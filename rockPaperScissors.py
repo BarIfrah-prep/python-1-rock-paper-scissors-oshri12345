@@ -1,53 +1,42 @@
-# Rock Paper Scissors
-# A code file structure:
-# A line that starts with "#"  is a comment line (it will not be interpreted)
-"""
-If you ant to comment multiple lines, start and finish with three (3) double quotes (")
-As you can see, this line is also a comment.
 
-"""
-
-# ----------------------------------------------------------------------------------------------------------------------
-# Here you include all of your package imports (like randome and time packages wev'e discussed about) 
-# ----------------------------------------------------------------------------------------------------------------------
 import random
-
-# ----------------------------------------------------------------------------------------------------------------------
-# Here you will write all of the functions (for later stages of the course
-# ----------------------------------------------------------------------------------------------------------------------
-
-# ----------------------------------------------------------------------------------------------------------------------
-# Here you write code :)
-# ----------------------------------------------------------------------------------------------------------------------
-"""
-I'll give you the text inputs for this program, to make your lives a little easier.
-In addition, and to make it simple to you, the input from the user will be an integer:
-1 for ROCK
-2 for PAPER
-3 for SCISSORS
-A text input describing the operation is unacceptable and will cost you with points.
-
-A quick reminder of the rules:
-
-ROCK(1) vs SCISSORS(3)   --> ROCK(1) wins
-SCISSORS(3) vs PAPER(2)  --> SCISSORS(3) win
-PAPER(2) vs ROCK(1)      --> PAPER(2) wins
-
-DO NOT ADD EXTRA OPTIONS (No lizard, no Spock.)
-"""
-
-# print the instructions for the user to see:
 print("GAME RULES: \n"
       "ROCK(1) vs SCISSORS(3)   --> ROCK(1) wins\n"
       "SCISSORS(3) vs PAPER(2)  --> SCISSORS(3) win\n"
-      "PAPER(2) vs ROCK(1)      --> PAPER(2) wins)\n")
+       "PAPER(2) vs ROCK(1)      --> PAPER(2) wins)\n")
+qr = int(input("if you want to play again press 5, "))
+w = 0
+while w == 0:
+    player1 = input("what your name ? ,   ")
+    player2 =  " the computer "
 
-# The game will run in a WHILE loop.
-# The loop is infinite, and only the user has the power to stop it (when they say they don't want to play anymore)
-while True:
-    """
-      This is the game's heart. You'll need to think and use everything we've learned so far to make this game work.
-      Remember Python's rules ( the ':' after a statement, the indentation with loops and statements..)
-      
-      """
-    pass
+    oshri = int(input(f"Hey {player1} please choose, 1 for `Rock` , 2 for `Paper` , 3 for `Scissors`,    "))
+    asher = random.randint(1,3)
+    if w == 0:
+
+
+       if oshri == 1 and asher == 2:
+        print(f"{player1} choos `Rook` and {player2} choos `Paper` , {player2} the winner !")
+       elif oshri == 1 and asher == 3:
+          print(f"{player1} choos `Rook` and {player2} choos `Scissors` , {player1} the winner !")
+          continue
+       if oshri == 2 and asher == 1:
+          print(f"{player1} choos `Paper` and {player2} choos `Rock` , {player1} the winner !")
+       elif oshri == 2 and asher == 3:
+          print(f"{player1} choos `Paper` and {player2} choos `Scissors` , {player2} the winner !")
+          continue
+       if oshri == 3 and asher == 1:
+          print(f"{player1} choos `Scissors` and {player2} choos `Rock` , {player2} the winner !")
+       elif oshri == 3 and asher == 2:
+          print(f"{player1} choos `Scissors` and {player2} choos `Paper` , {player1} the winner !")
+          continue
+       if oshri == asher:
+          print("Draw! please try again")
+       elif oshri > 3 or asher > 3:
+          print("wrong choice please try again")
+          continue
+       qr = int(input("to play again press 5, "))
+       if qr == 5:
+          print("let's play again")
+       else:
+           w += 1
